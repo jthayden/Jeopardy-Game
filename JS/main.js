@@ -1,5 +1,11 @@
 let gameBoard = document.querySelector('.game-board');
 
+for( let i = 0; i<5; i++){
+    let categories = document.createElement('category');
+    categories.classList.add('category');
+    gameBoard.appendChild(categories);
+    categories.appendChild(document.createTextNode('Category'));
+}
 for(let i = 0; i < 5; i++) {
     let btn = document.createElement('button');
     btn.classList.add('square');
@@ -30,6 +36,8 @@ for(let i = 0; i < 5; i++) {
     gameBoard.appendChild(btn);
     btn.appendChild(document.createTextNode('$500'));
 }
+
+
 $(document).ready(function(){
 $('.square').on('click', function(evt){
    console.log(evt.target)
