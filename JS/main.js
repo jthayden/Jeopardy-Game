@@ -30,7 +30,8 @@ for(let i = 0; i < 5; i++) {
     gameBoard.appendChild(btn);
     btn.appendChild(document.createTextNode('$500'));
 }
-
-$('.square').on('click', function(){
-    alert("working");
+$(document).ready(function(){
+$('.square').on('click', function(evt){
+   console.log(evt.target)
+})
 })
