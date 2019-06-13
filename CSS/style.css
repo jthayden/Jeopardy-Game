@@ -1,12 +1,13 @@
-table {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    background-color: white;
-    border: 15px solid transparent;
+.game-board{
+    display: grid;
+    grid-template-columns: 15px 15px 15px 15px 15px;
+    grid-template-rows: 15px 15px 15px 15px 15px
 }
 
-td {
-    background-color: blue;
-    padding: 30px;
-}
+.square {
+    /* display: grid; */
+    /* width: 15px;
+    height: 15px; */
+    background: black;
+    /* margin: 0 auto; */
+  }
