@@ -1,13 +1,15 @@
 .game-board{
     display: grid;
-    grid-template-columns: 15px 15px 15px 15px 15px;
-    grid-template-rows: 15px 15px 15px 15px 15px
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
 }
 
-.square {
-    /* display: grid; */
-    /* width: 15px;
-    height: 15px; */
-    background: black;
-    /* margin: 0 auto; */
+  .square {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
   }
