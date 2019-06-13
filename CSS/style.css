@@ -1,0 +1,12 @@
+table {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    border: 15px solid transparent;
+}
+
+td {
+    background-color: blue;
+    padding: 30px;
+}
