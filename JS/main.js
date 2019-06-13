@@ -31,3 +31,6 @@ for(let i = 0; i < 5; i++) {
     btn.appendChild(document.createTextNode('$500'));
 }
 
+$('.square').on('click', function(){
+    alert("working");
+})
