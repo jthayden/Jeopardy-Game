@@ -53,6 +53,7 @@ $(document).ready(function () {
     $('.square').on('click', function (evt) {
         // console.log(evt.target)
         console.log(questions[this.dataset.row][this.dataset.column])
+        alert(questions[this.dataset.row][this.dataset.column])
     })
 
 
