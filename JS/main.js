@@ -4,11 +4,9 @@ for (let i = 0; i < 5; i++) {
     let categories = document.createElement('h2');
     categories.classList.add('category');
     gameBoard.appendChild(categories);
-    categories.appendChild(document.createTextNode(categoriesArray[0]));
+    categories.appendChild(document.createTextNode(categoriesArray[i]));
 }
-for(let i =0; i < 5; i++){
-    console.log(categoriesArray[i])
-}
+
 for (let i = 0; i < 5; i++) {
     let btn = document.createElement('button');
     btn.classList.add('square');
