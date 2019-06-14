@@ -15,8 +15,6 @@ h1 {
     font-size: 90px;
 }
 
-button {}
-
 .game-board {
     display: grid;
     grid-template-columns: auto auto auto auto auto;

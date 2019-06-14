@@ -68,7 +68,7 @@ $(document).ready(function () {
     $('.rowOne').on('click', function (evt) {
         // console.log(evt.target)
         console.log(questions[this.dataset.row][this.dataset.column])
-        // alert(questions[this.dataset.row][this.dataset.column])
+        alert(questions[this.dataset.row][this.dataset.column])
     })
 })
 
