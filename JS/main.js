@@ -9,7 +9,7 @@ for (let i = 0; i < 5; i++) {
 
 for (let i = 0; i < 5; i++) {
     let btn = document.createElement('button');
-    btn.classList.add('square');
+    btn.classList.add('rowOne');
     btn.dataset.column = i
     btn.dataset.row = 'one'
     gameBoard.appendChild(btn);
@@ -17,7 +17,7 @@ for (let i = 0; i < 5; i++) {
 }
 for (let i = 0; i < 5; i++) {
     let btn = document.createElement('button');
-    btn.classList.add('square');
+    btn.classList.add('rowTwo');
     btn.dataset.column = i
     btn.dataset.row = 'two'
     gameBoard.appendChild(btn);
@@ -25,7 +25,7 @@ for (let i = 0; i < 5; i++) {
 }
 for (let i = 0; i < 5; i++) {
     let btn = document.createElement('button');
-    btn.classList.add('square');
+    btn.classList.add('rowThree');
     btn.dataset.column = i
     btn.dataset.row = 'three'
     gameBoard.appendChild(btn);
@@ -33,7 +33,7 @@ for (let i = 0; i < 5; i++) {
 }
 for (let i = 0; i < 5; i++) {
     let btn = document.createElement('button');
-    btn.classList.add('square');
+    btn.classList.add('rowFour');
     btn.dataset.column = i
     btn.dataset.row = 'four'
     gameBoard.appendChild(btn);
@@ -41,23 +41,38 @@ for (let i = 0; i < 5; i++) {
 }
 for (let i = 0; i < 5; i++) {
     let btn = document.createElement('button');
-    btn.classList.add('square');
+    btn.classList.add('rowFive');
     btn.dataset.column = i
     btn.dataset.row = 'five'
     gameBoard.appendChild(btn);
     btn.appendChild(document.createTextNode('$500'));
 }
 
+// let rowOne = $('.rowOne');
+// rowOne.on('click', function(evt){
+// let tile = evt.target.id;
+// console.log(evt.target)
+// let prompt = questions[tile].prompt
+// alert(prompt)
+// let response =
+// window.prompt(questions[tile].prompt)
+// if (response === questions[tile].answer){
+//     alert('correct')
+// } else {
+//     alert('wrong')
+// } return;
+// })
 
-$(document).ready(function () {
-    $('.square').on('click', function (evt) {
-        // console.log(evt.target)
-        console.log(questions[this.dataset.row][this.dataset.column])
-        // alert(questions[this.dataset.row][this.dataset.column])
-    })
+
+// $(document).ready(function () {
+//     $('.rowOne').on('click', function (evt) {
+//         // console.log(evt.target)
+//         console.log(questions[this.dataset.row][this.dataset.column])
+//         // alert(questions[this.dataset.row][this.dataset.column])
+//     })
 
 
-})
+// })
 
 
 
