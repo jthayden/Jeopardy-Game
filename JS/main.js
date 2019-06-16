@@ -70,6 +70,7 @@ $(document).ready(function () {
     rowOne.on('click', function(clicked){
         var gamePiece = clicked.target.id
         console.log(clicked.target)
+        Swal.fire('Any fool can use this')
 
     })
     
