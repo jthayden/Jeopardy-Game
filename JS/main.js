@@ -48,20 +48,6 @@ for (let i = 0; i < 5; i++) {
     btn.appendChild(document.createTextNode('$500'));
 }
 
-// let rowOne = $('.rowOne');
-// rowOne.on('click', function(evt){
-// let tile = evt.target.id;
-// console.log(evt.target)
-// let prompt = questions[tile].prompt
-// alert(prompt)
-// let response =
-// window.prompt(questions[tile].prompt)
-// if (response === questions[tile].answer){
-//     alert('correct')
-// } else {
-//     alert('wrong')
-// } return;              
-// })
 
 
 $(document).ready(function () {
@@ -86,29 +72,9 @@ $(document).ready(function () {
         // console.log(rowOneQuestions[gamePiece].options)
 
 
-        
-        
-        
-        // var prompt = rowOneQuestions[gamePiece].prompt
-        // alert(prompt)
-        // var response = window.prompt(rowOneQuestions[gamePiece.prompt])
-        // if(response === rowOneQuestions[gamePiece].answer){
-        //     alert('correct')
-        // } else {
-        //     alert('incorrect')
-        // } return
-
     })
     
     
-    
-    // $('.rowOne').on('click', function (evt) {
-    //     // console.log(evt.target)
-    //     console.log([this.dataset.row][this.dataset.column])
-    //     console.log(rowOneQuestions[this.dataset.row][this.dataset.column])
-    //     // alert(questions[this.dataset.row][this.dataset.column])
-    // })
-// })
 // $100 questions
 let rowOneQuestions = [
     columnOne = {
@@ -119,7 +85,6 @@ let rowOneQuestions = [
             incorrect: 'bruce willis'
     }
                         
-        // answer: 'Danny DeVito'
 
     },
     columnTwo = {
@@ -165,24 +130,6 @@ let rowOneQuestions = [
 //                 { text: 'Hi', isCorrectAnswer: false }
 //             ]
 //         }
-//     ],
-//     three: [
-//         {
-//             question: 'Does this work',
-//             options: [
-//                 { text: 'Yes it does', isCorrectAnswer: true }
-//             ]
-//         },
-//         {
-//             question: 'Hey there',
-//             options: [
-//                 { text: 'Hi', isCorrectAnswer: false }
-//             ]
-//         }
-//     ],
-//     four: [
-//         {
-//             question: 'Does this work',
-//             options: [
-//                 { text: 'Yes it does', isCorrectAnswer: true }
+//     ]
+
 })
