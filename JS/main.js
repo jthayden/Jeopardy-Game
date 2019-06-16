@@ -70,15 +70,33 @@ $(document).ready(function () {
     rowOne.on('click', function(clicked){
         var gamePiece = clicked.target.id
         console.log(clicked.target)
-        // Swal.fire('Any fool can use this')
-        var prompt = rowOneQuestions[gamePiece].prompt
-        alert(prompt)
-        var response = window.prompt(rowOneQuestions[gamePiece.prompt])
-        if(response === rowOneQuestions[gamePiece].answer){
-            alert('correct')
-        } else {
-            alert('incorrect')
-        } return
+        const {value: choice} = Swal.fire({
+            title: rowOneQuestions[gamePiece].question,
+            input: 'radio',
+            inputOptions: rowOneQuestions[gamePiece].options,
+            
+            inputValidator: (value) => {
+                if (value === 'correct'){
+                    return 'Correct'
+                } else {
+                    return 'Incorrect'
+                }
+            }})
+            console.log(rowOneQuestions[gamePiece].options.correct)
+        // console.log(rowOneQuestions[gamePiece].options)
+
+
+        
+        
+        
+        // var prompt = rowOneQuestions[gamePiece].prompt
+        // alert(prompt)
+        // var response = window.prompt(rowOneQuestions[gamePiece.prompt])
+        // if(response === rowOneQuestions[gamePiece].answer){
+        //     alert('correct')
+        // } else {
+        //     alert('incorrect')
+        // } return
 
     })
     
@@ -90,12 +108,18 @@ $(document).ready(function () {
     //     console.log(rowOneQuestions[this.dataset.row][this.dataset.column])
     //     // alert(questions[this.dataset.row][this.dataset.column])
     // })
-})
+// })
 // $100 questions
 let rowOneQuestions = [
     columnOne = {
-        prompt: "Question blahblah",
-        answer: "a"
+        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+        options: {
+            correct: 'Danny Devito',
+            incorrect2: 'sam jackson',
+            incorrect: 'bruce willis'
+    }
+                        
+        // answer: 'Danny DeVito'
 
     },
     columnTwo = {
@@ -161,27 +185,4 @@ let rowOneQuestions = [
 //             question: 'Does this work',
 //             options: [
 //                 { text: 'Yes it does', isCorrectAnswer: true }
-//             ]
-//         },
-//         {
-//             question: 'Hey there',
-//             options: [
-//                 { text: 'Hi', isCorrectAnswer: false }
-//             ]
-//         }
-//     ],
-//     five: [
-//         {
-//             question: 'Does this work',
-//             options: [
-//                 { text: 'Yes it does', isCorrectAnswer: true }
-//             ]
-//         },
-//         {
-//             question: 'Hey there',
-//             options: [
-//                 { text: 'Hi', isCorrectAnswer: false }
-//             ]
-//         }
-//     ]
-// }
+})
