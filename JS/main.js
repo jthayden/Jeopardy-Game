@@ -60,7 +60,7 @@ for (let i = 0; i < 5; i++) {
 //     alert('correct')
 // } else {
 //     alert('wrong')
-// } return;
+// } return;              
 // })
 
 
@@ -70,7 +70,15 @@ $(document).ready(function () {
     rowOne.on('click', function(clicked){
         var gamePiece = clicked.target.id
         console.log(clicked.target)
-        Swal.fire('Any fool can use this')
+        // Swal.fire('Any fool can use this')
+        var prompt = rowOneQuestions[gamePiece].prompt
+        alert(prompt)
+        var response = window.prompt(rowOneQuestions[gamePiece.prompt])
+        if(response === rowOneQuestions[gamePiece].answer){
+            alert('correct')
+        } else {
+            alert('incorrect')
+        } return
 
     })
     
@@ -86,12 +94,12 @@ $(document).ready(function () {
 // $100 questions
 let rowOneQuestions = [
     columnOne = {
-        question: "Question blahblah",
+        prompt: "Question blahblah",
         answer: "a"
 
     },
     columnTwo = {
-        promt: "Question2 blahblah",
+        prompt: "Question2 blahblah",
         answer:"a"
     },
     columnThree = {
