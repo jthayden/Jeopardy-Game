@@ -1,4 +1,5 @@
-var score = 0
+$(document).ready(function () {
+let score = 0
 let gameBoard = document.querySelector('.game-board');
 const categoriesArray = ['TV/Movies', 'Golf', 'South Carolina', 'Tennis', 'Food']
 // const categoriesArray = ['C1', 'C2', 'C3', 'C4', 'C5'] 
@@ -52,18 +53,20 @@ for (let i = 0; i < 5; i++) {
 
 
 
-$(document).ready(function () {
+
     var rowOne = $('.rowOne')
     var rowTwo = $('.rowTwo')
     var rowThree = $('.rowThree')
     var rowFour = $('.rowFour')
     var rowFive = $('.rowFive')
     let scoreElem = $('#score')
+    
     // let score=0
 
     //Row 1 click function
     rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
+        
         console.log(clicked.target)
         const { value: choice } = Swal.fire({
             background: 'white',
@@ -200,6 +203,35 @@ $(document).ready(function () {
         })
         $(this).attr('disabled', 'disabled')
     })
+
+    // let checkScore = function() {
+    //     if (score > 3500) {
+    //         alert('You Have Won The Game!')
+    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+    //     } else if (score === 3500) {
+    //         alert('You have tied')
+    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+    //     } else if (score <= -1000) {
+    //         alert('You Have Lost The Game, Refresh To Try Again')
+    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+    //     }
+    // }
+
+    // Win/Lose
+    $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').on('click', function(){
+        if(score > 3500) {
+            alert('You Have Won The Game!')
+            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+        } else if (score === 3500){
+            alert('You have tied')
+            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+        } else if(score <= -1000) {
+            alert('You Have Lost The Game, Refresh To Try Again')
+            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+        }
+
+        })
+
 
     // $100 questions
     let rowOneQuestions = [
