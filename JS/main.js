@@ -43,7 +43,7 @@ for (let i = 0; i < 5; i++) {
 for (let i = 0; i < 5; i++) {
     let btn = document.createElement('button');
     btn.classList.add('rowFive');
-    btn.setAttribute('id', i)   
+    btn.setAttribute('id', i)
     gameBoard.appendChild(btn);
     btn.appendChild(document.createTextNode('$500'));
 }
@@ -53,28 +53,30 @@ for (let i = 0; i < 5; i++) {
 $(document).ready(function () {
     var rowOne = $('.rowOne')
 
-    rowOne.on('click', function(clicked){
+    rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         console.log(clicked.target)
-        const {value: choice} = Swal.fire({
+        const { value: choice } = Swal.fire({
+            background: 'black',
+            type: 'question',
             title: rowOneQuestions[gamePiece].question,
             input: 'radio',
             inputOptions: rowOneQuestions[gamePiece].options,
-            
-            inputValidator: (value) => {
-                if (value === 'correct'){
-                    return 'Correct'
+            inputValidator: function (value) {
+                if (!value) {
+                    return "Please select an answer"
+                } else if (value === 'correct') {
+                    alert('Correct!')
                 } else {
-                    return 'Incorrect'
+                    alert('Wrong!')
                 }
-            }})
-            console.log(rowOneQuestions[gamePiece].options.correct)
-        // console.log(rowOneQuestions[gamePiece].options)
+                
+            }
 
-
+        })
     })
-    
-    
+
+
 // $100 questions
 let rowOneQuestions = [
     columnOne = {
@@ -83,13 +85,13 @@ let rowOneQuestions = [
             correct: 'Danny Devito',
             incorrect2: 'sam jackson',
             incorrect: 'bruce willis'
-    }
-                        
+        }
+
 
     },
     columnTwo = {
         prompt: "Question2 blahblah",
-        answer:"a"
+        answer: "a"
     },
     columnThree = {
 
