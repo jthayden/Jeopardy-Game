@@ -1,6 +1,7 @@
 var score = 0
 let gameBoard = document.querySelector('.game-board');
-const categoriesArray = ['cat1', 'cat2', 'cat3', 'cat4', 'cat5']
+const categoriesArray = ['TV/Movies', 'Golf', 'South Carolina', 'Tennis', 'Food']
+// const categoriesArray = ['C1', 'C2', 'C3', 'C4', 'C5'] 
 //create category header on gameboard
 for (let i = 0; i < 5; i++) {
     let categories = document.createElement('h2');
@@ -221,19 +222,19 @@ $(document).ready(function () {
             }
         },
         columnThree = {
-            question: "What automobile manufacurer was first to implement the assembly line for the mass production of an entire engine?",
+            question: "This resort island off the coast of South Carolina was named for a British sea captain.",
             options: {
-                correct: 'Who is Ford Motor Company',
-                incorrect: 'Who is ...',
-                incorrect1: 'Who is ...',
-                incorrect2: 'Who is ...'
+                correct: 'What is Hilton Head Island',
+                incorrect: 'What is ...',
+                incorrect1: 'What is ...',
+                incorrect2: 'What is ...'
             }
         },
         columnFour = {
-            question: "What was the first publicly traded U.S. company to reach a $1 trillion market cap?",
+            question: "",
             options: {
-                correct: 'Who is Apple',
-                incorrect: 'Who is Microsoft',
+                correct: 'Who is',
+                incorrect: 'Who is ',
                 incorrect1: 'Who is ...',
                 incorrect2: 'Who is ...'
             }
@@ -272,12 +273,12 @@ $(document).ready(function () {
             }
         },
         columnThree = {
-            question: "",
+            question: "The German multinational company, BMW, produces over __% of their entire modal lineup in this South Carolina city.",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is Spartanburg',
+                incorrect: 'What is Greenville',
+                incorrect1: 'What is Sumter',
+                incorrect2: 'What is Orangeburg'
             }
         },
         columnFour = {
@@ -303,9 +304,9 @@ $(document).ready(function () {
     // $300 questions
     let rowThreeQuestions = [
         columnOne = {
-            question: "When this tv chef hosted Everday Italian, angry viewers wrote to Food Network that they hired a model who was pretending to cook.",
+            question: "",
             options: {
-                correct: 'Who is Giada De Laurentiis',
+                correct: '',
                 incorrect: 'Who is ...',
                 incorrect1: 'Who is ...',
                 incorrect2: 'Who is ...'
@@ -366,12 +367,12 @@ $(document).ready(function () {
 
         },
         columnTwo = {
-            question: "",
+            question: "How many holes are in a full round of golf?",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is eighteen',
+                incorrect: 'What is nine',
+                incorrect1: 'What is twelve',
+                incorrect2: 'What is twenty-four'
             }
         },
         columnThree = {

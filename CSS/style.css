@@ -9,15 +9,24 @@ header {
     justify-content: center;
     padding: 40px;
 }
-
+#header-right{
+    justify-content: flex-end;
+}
 h1 {
+    justify-content: center;
     color: blue;
     font-size: 90px;
 }
 
+.category {
+    background-color: black;
+    color: white;
+    
+}
+
 .game-board {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto auto auto auto auto;
     background-color: #2196F3;
     padding: 25px;
