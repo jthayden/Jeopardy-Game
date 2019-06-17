@@ -69,6 +69,7 @@ for (let i = 0; i < 5; i++) {
         
         console.log(clicked.target)
         const { value: choice } = Swal.fire({
+            allowOutsideClick: false,
             background: 'white',
             type: 'question',
             title: rowOneQuestions[gamePiece].question,
@@ -97,6 +98,7 @@ for (let i = 0; i < 5; i++) {
         var gamePiece = clicked.target.id
         console.log(clicked.target)
         const { value: choice } = Swal.fire({
+            allowOutsideClick: false,
             background: 'white',
             type: 'question',
             title: rowTwoQuestions[gamePiece].question,
@@ -125,6 +127,7 @@ for (let i = 0; i < 5; i++) {
         var gamePiece = clicked.target.id
         console.log(clicked.target)
         const { value: choice } = Swal.fire({
+            allowOutsideClick: false,
             background: 'white',
             type: 'question',
             title: rowThreeQuestions[gamePiece].question,
@@ -153,6 +156,7 @@ for (let i = 0; i < 5; i++) {
         var gamePiece = clicked.target.id
         console.log(clicked.target)
         const { value: choice } = Swal.fire({
+            allowOutsideClick: false,
             background: 'white',
             type: 'question',
             title: rowFourQuestions[gamePiece].question,
@@ -181,6 +185,7 @@ for (let i = 0; i < 5; i++) {
         var gamePiece = clicked.target.id
         console.log(clicked.target)
         const { value: choice } = Swal.fire({
+            allowOutsideClick: false,
             background: 'white',
             type: 'question',
             title: rowFiveQuestions[gamePiece].question,
