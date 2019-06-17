@@ -5,15 +5,22 @@ body {
 }
 
 header {
-    display: flex;
+    max-height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     justify-content: center;
+    align-items: center;
     padding: 40px;
 }
 #header-right{
-    justify-content: flex-end;
+    grid-area: 1 / col3-start / last-line / 4;
+    /* justify-content: flex-end; */
 }
 h1 {
-    justify-content: center;
+    grid-column: 2 / 4;
+    /* grid-area: 2 / col2-start / last-line / 4; */
+    /* justify-content: center; */
     color: blue;
     font-size: 90px;
 }
@@ -21,7 +28,7 @@ h1 {
 .category {
     background-color: black;
     color: white;
-    
+
 }
 
 .game-board {
