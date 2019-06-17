@@ -17,12 +17,14 @@ header {
     grid-area: 1 / col3-start / last-line / 4;
     /* justify-content: flex-end; */
 }
-h1 {
+.logo {
     grid-column: 2 / 4;
+    justify-self: stretch;
+    max-height: 90px;
     /* grid-area: 2 / col2-start / last-line / 4; */
     /* justify-content: center; */
-    color: blue;
-    font-size: 90px;
+    /* color: blue;
+    font-size: 90px; */
 }
 
 .category {
