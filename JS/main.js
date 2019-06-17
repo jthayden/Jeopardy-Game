@@ -1,55 +1,68 @@
 $(document).ready(function () {
-let score = 0
-let gameBoard = document.querySelector('.game-board');
-const categoriesArray = ['TV/Movies', 'Golf', 'South Carolina', 'Tennis', 'Food']
-// const categoriesArray = ['C1', 'C2', 'C3', 'C4', 'C5'] 
-//create category header on gameboard
-for (let i = 0; i < 5; i++) {
-    let categories = document.createElement('h2');
-    categories.classList.add('category');
-    gameBoard.appendChild(categories);
-    categories.appendChild(document.createTextNode(categoriesArray[i]));
-}
-//create row one of game tiles
-for (let i = 0; i < 5; i++) {
-    let btn = document.createElement('button');
-    btn.classList.add('rowOne');
-    btn.setAttribute('id', i)
-    gameBoard.appendChild(btn);
-    btn.appendChild(document.createTextNode('$100'));
-}
-//create row two of game tiles
-for (let i = 0; i < 5; i++) {
-    let btn = document.createElement('button');
-    btn.classList.add('rowTwo');
-    btn.setAttribute('id', i)
-    gameBoard.appendChild(btn);
-    btn.appendChild(document.createTextNode('$200'));
-}
-//create row three of game tiles
-for (let i = 0; i < 5; i++) {
-    let btn = document.createElement('button');
-    btn.classList.add('rowThree');
-    btn.setAttribute('id', i)
-    gameBoard.appendChild(btn);
-    btn.appendChild(document.createTextNode('$300'));
-}
-//create row four of game tiles
-for (let i = 0; i < 5; i++) {
-    let btn = document.createElement('button');
-    btn.classList.add('rowFour');
-    btn.setAttribute('id', i)
-    gameBoard.appendChild(btn);
-    btn.appendChild(document.createTextNode('$400'));
-}
-//create row five of game tiles
-for (let i = 0; i < 5; i++) {
-    let btn = document.createElement('button');
-    btn.classList.add('rowFive');
-    btn.setAttribute('id', i)
-    gameBoard.appendChild(btn);
-    btn.appendChild(document.createTextNode('$500'));
-}
+    let score = 0
+    let gameBoard = document.querySelector('.game-board');
+    const categoriesArray = ['TV/Movies', 'Golf', 'South Carolina', 'Tennis', 'Food']
+    function checkScore() {
+        if (score > 2000) {
+            alert('You Have Won The Game!')
+            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+        } else if (score === 3500) {
+            alert('You have tied')
+            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+        } else if (score <= -1000) {
+            alert('You Have Lost The Game, Refresh To Try Again')
+            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+        }
+    }
+
+    // const categoriesArray = ['C1', 'C2', 'C3', 'C4', 'C5'] 
+    //create category header on gameboard
+    for (let i = 0; i < 5; i++) {
+        let categories = document.createElement('h2');
+        categories.classList.add('category');
+        gameBoard.appendChild(categories);
+        categories.appendChild(document.createTextNode(categoriesArray[i]));
+    }
+    //create row one of game tiles
+    for (let i = 0; i < 5; i++) {
+        let btn = document.createElement('button');
+        btn.classList.add('rowOne');
+        btn.setAttribute('id', i)
+        gameBoard.appendChild(btn);
+        btn.appendChild(document.createTextNode('$100'));
+    }
+    //create row two of game tiles
+    for (let i = 0; i < 5; i++) {
+        let btn = document.createElement('button');
+        btn.classList.add('rowTwo');
+        btn.setAttribute('id', i)
+        gameBoard.appendChild(btn);
+        btn.appendChild(document.createTextNode('$200'));
+    }
+    //create row three of game tiles
+    for (let i = 0; i < 5; i++) {
+        let btn = document.createElement('button');
+        btn.classList.add('rowThree');
+        btn.setAttribute('id', i)
+        gameBoard.appendChild(btn);
+        btn.appendChild(document.createTextNode('$300'));
+    }
+    //create row four of game tiles
+    for (let i = 0; i < 5; i++) {
+        let btn = document.createElement('button');
+        btn.classList.add('rowFour');
+        btn.setAttribute('id', i)
+        gameBoard.appendChild(btn);
+        btn.appendChild(document.createTextNode('$400'));
+    }
+    //create row five of game tiles
+    for (let i = 0; i < 5; i++) {
+        let btn = document.createElement('button');
+        btn.classList.add('rowFive');
+        btn.setAttribute('id', i)
+        gameBoard.appendChild(btn);
+        btn.appendChild(document.createTextNode('$500'));
+    }
 
 
 
@@ -60,13 +73,13 @@ for (let i = 0; i < 5; i++) {
     var rowFour = $('.rowFour')
     var rowFive = $('.rowFive')
     let scoreElem = $('#score')
-    
+
     // let score=0
 
     //Row 1 click function
     rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
-        
+
         console.log(clicked.target)
         const { value: choice } = Swal.fire({
             allowOutsideClick: false,
@@ -87,7 +100,8 @@ for (let i = 0; i < 5; i++) {
                     score -= 100
                 }
                 scoreElem.html("  $" + score)
-            }
+            },
+            onAfterClose: checkScore
 
         })
         $(this).attr('disabled', 'disabled')
@@ -116,7 +130,8 @@ for (let i = 0; i < 5; i++) {
                     score -= 200
                 }
                 scoreElem.html("  $" + score)
-            }
+            },
+            onAfterClose: checkScore
 
         })
         $(this).attr('disabled', 'disabled')
@@ -145,7 +160,8 @@ for (let i = 0; i < 5; i++) {
                     score -= 300
                 }
                 scoreElem.html("  $" + score)
-            }
+            },
+            onAfterClose: checkScore
 
         })
         $(this).attr('disabled', 'disabled')
@@ -174,7 +190,8 @@ for (let i = 0; i < 5; i++) {
                     score -= 400
                 }
                 scoreElem.html("  $" + score)
-            }
+            },
+            onAfterClose: checkScore
 
         })
         $(this).attr('disabled', 'disabled')
@@ -203,8 +220,20 @@ for (let i = 0; i < 5; i++) {
                     score -= 500
                 }
                 scoreElem.html("  $" + score)
-            }
-
+            },
+            onAfterClose: checkScore
+            // function () {
+            //     if (score > 3500) {
+            //         alert('You Have Won The Game!')
+            //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+            //     } else if (score === 3500) {
+            //         alert('You have tied')
+            //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+            //     } else if (score <= -1000) {
+            //         alert('You Have Lost The Game, Refresh To Try Again')
+            //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+            //     }
+            // }
         })
         $(this).attr('disabled', 'disabled')
     })
@@ -223,19 +252,19 @@ for (let i = 0; i < 5; i++) {
     // }
 
     // Win/Lose
-    $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').on('click', function(){
-        if(score > 3500) {
-            alert('You Have Won The Game!')
-            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-        } else if (score === 3500){
-            alert('You have tied')
-            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-        } else if(score <= -1000) {
-            alert('You Have Lost The Game, Refresh To Try Again')
-            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-        }
+    // $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').on('click', function () {
+    //     if (score > 3500) {
+    //         alert('You Have Won The Game!')
+    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+    //     } else if (score === 3500) {
+    //         alert('You have tied')
+    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+    //     } else if (score <= -1000) {
+    //         alert('You Have Lost The Game, Refresh To Try Again')
+    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+    //     }
 
-        })
+    // })
 
 
     // $100 questions
