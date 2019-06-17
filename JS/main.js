@@ -57,8 +57,10 @@ $(document).ready(function () {
     var rowThree = $('.rowThree')
     var rowFour = $('.rowFour')
     var rowFive = $('.rowFive')
-let scoreElem = $('#score')
-// let score=0
+    let scoreElem = $('#score')
+    // let score=0
+   
+    //Row 1 click function
     rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         console.log(clicked.target)
@@ -79,171 +81,253 @@ let scoreElem = $('#score')
                     alert('Wrong!')
                     score -= 100
                 }
-                scoreElem.html("  $"+score)
+                scoreElem.html("  $" + score)
             }
 
         })
     })
-        rowTwo.on('click', function (clicked) {
-            var gamePiece = clicked.target.id
-            console.log(clicked.target)
-            const { value: choice } = Swal.fire({
-                background: 'white',
-                type: 'question',
-                title: rowOneQuestions[gamePiece].question,
-                input: 'radio',
-                inputOptions: rowTwoQuestions[gamePiece].options,
-                inputValidator: function (value) {
-                    if (!value) {
-                        return "Please select an answer"
-                    } else if (value === 'correct') {
-                        alert('Correct!')
-                        score += 200
-    
-                    } else {
-                        alert('Wrong!')
-                        score -= 200
-                    }
-                    scoreElem.html("  $"+score)
+
+    //Row 2 click function
+    rowTwo.on('click', function (clicked) {
+        var gamePiece = clicked.target.id
+        console.log(clicked.target)
+        const { value: choice } = Swal.fire({
+            background: 'white',
+            type: 'question',
+            title: rowOneQuestions[gamePiece].question,
+            input: 'radio',
+            inputOptions: rowTwoQuestions[gamePiece].options,
+            inputValidator: function (value) {
+                if (!value) {
+                    return "Please select an answer"
+                } else if (value === 'correct') {
+                    alert('Correct!')
+                    score += 200
+
+                } else {
+                    alert('Wrong!')
+                    score -= 200
                 }
-    
-            })
+                scoreElem.html("  $" + score)
+            }
+
+        })
     })
 
+    //Row 3 click function
+    rowThree.on('click', function (clicked) {
+        var gamePiece = clicked.target.id
+        console.log(clicked.target)
+        const { value: choice } = Swal.fire({
+            background: 'white',
+            type: 'question',
+            title: rowThreeQuestions[gamePiece].question,
+            input: 'radio',
+            inputOptions: rowThreeQuestions[gamePiece].options,
+            inputValidator: function (value) {
+                if (!value) {
+                    return "Please select an answer"
+                } else if (value === 'correct') {
+                    alert('Correct!')
+                    score += 300
 
-// $100 questions
-let rowOneQuestions = [
-    columnOne = {
-        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
-        options: {
-            correct: 'Danny Devito',
-            incorrect2: 'sam jackson',
-            incorrect: 'bruce willis'
+                } else {
+                    alert('Wrong!')
+                    score -= 300
+                }
+                scoreElem.html("  $" + score)
+            }
+
+        })
+    })
+
+    //Row 4 click function
+    rowFour.on('click', function (clicked) {
+        var gamePiece = clicked.target.id
+        console.log(clicked.target)
+        const { value: choice } = Swal.fire({
+            background: 'white',
+            type: 'question',
+            title: rowFourQuestions[gamePiece].question,
+            input: 'radio',
+            inputOptions: rowFourQuestions[gamePiece].options,
+            inputValidator: function (value) {
+                if (!value) {
+                    return "Please select an answer"
+                } else if (value === 'correct') {
+                    alert('Correct!')
+                    score += 400
+
+                } else {
+                    alert('Wrong!')
+                    score -= 400
+                }
+                scoreElem.html("  $" + score)
+            }
+
+        })
+    })
+
+    //Row 5 click function
+    rowFive.on('click', function (clicked) {
+        var gamePiece = clicked.target.id
+        console.log(clicked.target)
+        const { value: choice } = Swal.fire({
+            background: 'white',
+            type: 'question',
+            title: rowFiveQuestions[gamePiece].question,
+            input: 'radio',
+            inputOptions: rowFiveQuestions[gamePiece].options,
+            inputValidator: function (value) {
+                if (!value) {
+                    return "Please select an answer"
+                } else if (value === 'correct') {
+                    alert('Correct!')
+                    score += 500
+
+                } else {
+                    alert('Wrong!')
+                    score -= 500
+                }
+                scoreElem.html("  $" + score)
+            }
+
+        })
+    })
+
+    // $100 questions
+    let rowOneQuestions = [
+        columnOne = {
+            question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+            options: {
+                correct: 'Danny Devito',
+                incorrect2: 'sam jackson',
+                incorrect: 'bruce willis'
+            }
+
+
+        },
+        columnTwo = {
+            prompt: "Question2 blahblah",
+            answer: "a"
+        },
+        columnThree = {
+
+        },
+        columnFour = {
+
+        },
+        columnFive = {
+
         }
+    ]
+
+    // $200 questions
+    let rowTwoQuestions = [
+        columnOne = {
+            question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+            options: {
+                correct: 'Danny Devito',
+                incorrect2: 'sam jackson',
+                incorrect: 'bruce willis'
+            }
 
 
-    },
-    columnTwo = {
-        prompt: "Question2 blahblah",
-        answer: "a"
-    },
-    columnThree = {
+        },
+        columnTwo = {
+            prompt: "Question2 blahblah",
+            answer: "a"
+        },
+        columnThree = {
 
-    },
-    columnFour = {
+        },
+        columnFour = {
 
-    },
-    columnFive = {
+        },
+        columnFive = {
 
-    }
-]
-
-// $200 questions
-let rowTwoQuestions = [
-    columnOne = {
-        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
-        options: {
-            correct: 'Danny Devito',
-            incorrect2: 'sam jackson',
-            incorrect: 'bruce willis'
         }
+    ]
+
+    // $300 questions
+    let rowThreeQuestions = [
+        columnOne = {
+            question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+            options: {
+                correct: 'Danny Devito',
+                incorrect2: 'sam jackson',
+                incorrect: 'bruce willis'
+            }
 
 
-    },
-    columnTwo = {
-        prompt: "Question2 blahblah",
-        answer: "a"
-    },
-    columnThree = {
+        },
+        columnTwo = {
+            prompt: "Question2 blahblah",
+            answer: "a"
+        },
+        columnThree = {
 
-    },
-    columnFour = {
+        },
+        columnFour = {
 
-    },
-    columnFive = {
+        },
+        columnFive = {
 
-    }
-]
-
-// $300 questions
-let rowThreeQuestions = [
-    columnOne = {
-        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
-        options: {
-            correct: 'Danny Devito',
-            incorrect2: 'sam jackson',
-            incorrect: 'bruce willis'
         }
+    ]
+
+    // $400 questions
+    let rowFourQuestions = [
+        columnOne = {
+            question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+            options: {
+                correct: 'Danny Devito',
+                incorrect2: 'sam jackson',
+                incorrect: 'bruce willis'
+            }
 
 
-    },
-    columnTwo = {
-        prompt: "Question2 blahblah",
-        answer: "a"
-    },
-    columnThree = {
+        },
+        columnTwo = {
+            prompt: "Question2 blahblah",
+            answer: "a"
+        },
+        columnThree = {
 
-    },
-    columnFour = {
+        },
+        columnFour = {
 
-    },
-    columnFive = {
+        },
+        columnFive = {
 
-    }
-]
-
-// $400 questions
-let rowFourQuestions = [
-    columnOne = {
-        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
-        options: {
-            correct: 'Danny Devito',
-            incorrect2: 'sam jackson',
-            incorrect: 'bruce willis'
         }
+    ]
+
+    // $500 questions
+    let rowFiveQuestions = [
+        columnOne = {
+            question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+            options: {
+                correct: 'Danny Devito',
+                incorrect2: 'sam jackson',
+                incorrect: 'bruce willis'
+            }
 
 
-    },
-    columnTwo = {
-        prompt: "Question2 blahblah",
-        answer: "a"
-    },
-    columnThree = {
+        },
+        columnTwo = {
+            prompt: "Question2 blahblah",
+            answer: "a"
+        },
+        columnThree = {
 
-    },
-    columnFour = {
+        },
+        columnFour = {
 
-    },
-    columnFive = {
+        },
+        columnFive = {
 
-    }
-]
-
-// $500 questions
-let rowFiveQuestions = [
-    columnOne = {
-        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
-        options: {
-            correct: 'Danny Devito',
-            incorrect2: 'sam jackson',
-            incorrect: 'bruce willis'
         }
-
-
-    },
-    columnTwo = {
-        prompt: "Question2 blahblah",
-        answer: "a"
-    },
-    columnThree = {
-
-    },
-    columnFour = {
-
-    },
-    columnFive = {
-
-    }
-]
+    ]
 
 })
