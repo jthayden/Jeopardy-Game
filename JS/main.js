@@ -59,7 +59,7 @@ $(document).ready(function () {
     var rowFive = $('.rowFive')
     let scoreElem = $('#score')
     // let score=0
-   
+
     //Row 1 click function
     rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
@@ -94,7 +94,7 @@ $(document).ready(function () {
         const { value: choice } = Swal.fire({
             background: 'white',
             type: 'question',
-            title: rowOneQuestions[gamePiece].question,
+            title: rowTwoQuestions[gamePiece].question,
             input: 'radio',
             inputOptions: rowTwoQuestions[gamePiece].options,
             inputValidator: function (value) {
@@ -200,133 +200,252 @@ $(document).ready(function () {
         columnOne = {
             question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
             options: {
-                correct: 'Danny Devito',
-                incorrect2: 'sam jackson',
-                incorrect: 'bruce willis'
+                correct: 'Who is Danny Devito',
+                incorrect: 'Who is ...',
+                incorrect1: 'Who is ...',
+                incorrect2: 'Who is ...'
             }
-
-
         },
         columnTwo = {
-            prompt: "Question2 blahblah",
-            answer: "a"
+            question: "Who was the first golfer to win the Masters Tournament two years in a row?",
+            options: {
+                correct: 'Who is Jack Nicklaus',
+                incorrect: 'Who is ...',
+                incorrect1: 'Who is ...',
+                incorrect2: 'Who is ...'
+            }
         },
         columnThree = {
-
+            question: "What automobile manufacurer was first to implement the assembly line for the mass production of an entire engine?",
+            options: {
+                correct: 'Who is Ford Motor Company',
+                incorrect: 'Who is ...',
+                incorrect1: 'Who is ...',
+                incorrect2: 'Who is ...'
+            }
         },
         columnFour = {
-
+            question: "What was the first publicly traded U.S. company to reach a $1 trillion market cap?",
+            options: {
+                correct: 'Who is Apple',
+                incorrect: 'Who is Microsoft',
+                incorrect1: 'Who is ...',
+                incorrect2: 'Who is ...'
+            }
         },
         columnFive = {
-
+            question: "This resort island off the coast of South Carolina was named for a British sea captain?",
+            options: {
+                correct: 'What is Hilton Head Island',
+                incorrect: 'What is Kiawah Island',
+                incorrect1: 'What is ...',
+                incorrect2: 'What is ...'
+            }
         }
     ]
 
     // $200 questions
     let rowTwoQuestions = [
         columnOne = {
-            question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+            question: "This famously foul-mouthed British chef is familiar to millions through his appearances in numerous television shows like Hell's Kitchen, Kitchen Nightmares, and MasterChef.",
             options: {
-                correct: 'Danny Devito',
-                incorrect2: 'sam jackson',
-                incorrect: 'bruce willis'
+                correct: 'Who is Gordon Ramsey',
+                incorrect: 'What is ...',
+                incorrect1: 'What is ...',
+                incorrect2: 'What is ...'
             }
 
 
         },
         columnTwo = {
-            prompt: "Question2 blahblah",
-            answer: "a"
+            question: "Tiger Woods became a professional golfer in what year?",
+            options: {
+                correct: 'What is 1996',
+                incorrect: 'What is ...',
+                incorrect1: 'What is ...',
+                incorrect2: 'What is ...'
+            }
         },
         columnThree = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnFour = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnFive = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         }
     ]
 
     // $300 questions
     let rowThreeQuestions = [
         columnOne = {
-            question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+            question: "When this tv chef hosted Everday Italian, angry viewers wrote to Food Network that they hired a model who was pretending to cook.",
             options: {
-                correct: 'Danny Devito',
-                incorrect2: 'sam jackson',
-                incorrect: 'bruce willis'
+                correct: 'Who is Giada De Laurentiis',
+                incorrect: 'Who is ...',
+                incorrect1: 'Who is ...',
+                incorrect2: 'Who is ...'
+
             }
 
 
         },
         columnTwo = {
-            prompt: "Question2 blahblah",
-            answer: "a"
+            question: 'What "King" of golf lent his name to a mixture of iced tea and lemonade?',
+            options: {
+                correct: 'Who is Arnold Palmer',
+                incorrect: 'Who is ...',
+                incorrect1: 'Who is ...',
+                incorrect2: 'Who is ...'
+            }
         },
         columnThree = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnFour = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnFive = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         }
     ]
 
     // $400 questions
     let rowFourQuestions = [
         columnOne = {
-            question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+            question: "",
             options: {
-                correct: 'Danny Devito',
-                incorrect2: 'sam jackson',
-                incorrect: 'bruce willis'
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
             }
 
 
         },
         columnTwo = {
-            prompt: "Question2 blahblah",
-            answer: "a"
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnThree = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnFour = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnFive = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         }
     ]
 
     // $500 questions
     let rowFiveQuestions = [
         columnOne = {
-            question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+            question: "",
             options: {
-                correct: 'Danny Devito',
-                incorrect2: 'sam jackson',
-                incorrect: 'bruce willis'
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
             }
 
 
         },
         columnTwo = {
-            prompt: "Question2 blahblah",
-            answer: "a"
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnThree = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnFour = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         },
         columnFive = {
-
+            question: "",
+            options: {
+                correct: '',
+                incorrect: '',
+                incorrect1: '',
+                incorrect2: ''
+            }
         }
     ]
 
