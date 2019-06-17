@@ -1,3 +1,4 @@
+var score = 0
 let gameBoard = document.querySelector('.game-board');
 const categoriesArray = ['cat1', 'cat2', 'cat3', 'cat4', 'cat5']
 //create category header on gameboard
@@ -52,7 +53,8 @@ for (let i = 0; i < 5; i++) {
 
 $(document).ready(function () {
     var rowOne = $('.rowOne')
-
+let scoreElem = $('#score')
+// let score=0
     rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         console.log(clicked.target)
@@ -67,13 +69,17 @@ $(document).ready(function () {
                     return "Please select an answer"
                 } else if (value === 'correct') {
                     alert('Correct!')
+                    score += 100
+
                 } else {
                     alert('Wrong!')
+                    score -= 100
                 }
-                
+                scoreElem.html("  $"+score)
             }
 
         })
+        
     })
 
 
