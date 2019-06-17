@@ -85,6 +85,7 @@ $(document).ready(function () {
             }
 
         })
+        $(this).attr('disabled', 'disabled')
     })
 
     //Row 2 click function
@@ -112,6 +113,7 @@ $(document).ready(function () {
             }
 
         })
+        $(this).attr('disabled', 'disabled')
     })
 
     //Row 3 click function
@@ -139,6 +141,7 @@ $(document).ready(function () {
             }
 
         })
+        $(this).attr('disabled', 'disabled')
     })
 
     //Row 4 click function
@@ -166,6 +169,7 @@ $(document).ready(function () {
             }
 
         })
+        $(this).attr('disabled', 'disabled')
     })
 
     //Row 5 click function
@@ -193,6 +197,7 @@ $(document).ready(function () {
             }
 
         })
+        $(this).attr('disabled', 'disabled')
     })
 
     // $100 questions
@@ -234,10 +239,10 @@ $(document).ready(function () {
             }
         },
         columnFive = {
-            question: "This resort island off the coast of South Carolina was named for a British sea captain?",
+            question: "A Moscow Mule is a type of cocktail popularly served in this.",
             options: {
-                correct: 'What is Hilton Head Island',
-                incorrect: 'What is Kiawah Island',
+                correct: 'What is a copper mug',
+                incorrect: 'What is ...',
                 incorrect1: 'What is ...',
                 incorrect2: 'What is ...'
             }
@@ -247,9 +252,9 @@ $(document).ready(function () {
     // $200 questions
     let rowTwoQuestions = [
         columnOne = {
-            question: "This famously foul-mouthed British chef is familiar to millions through his appearances in numerous television shows like Hell's Kitchen, Kitchen Nightmares, and MasterChef.",
+            question: "",
             options: {
-                correct: 'Who is Gordon Ramsey',
+                correct: '',
                 incorrect: 'What is ...',
                 incorrect1: 'What is ...',
                 incorrect2: 'What is ...'
@@ -285,12 +290,12 @@ $(document).ready(function () {
             }
         },
         columnFive = {
-            question: "",
+            question: "When found on a beer bottle, what does the acronym IPA stand for?",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is India Pale Ale',
+                incorrect: 'What is ...',
+                incorrect1: 'What is ...',
+                incorrect2: 'What is ...'
             }
         }
     ]
@@ -337,12 +342,12 @@ $(document).ready(function () {
             }
         },
         columnFive = {
-            question: "",
+            question: "Highly regarded awards are given annually in the name of this man who is considered the dean of American chefs. Among others he was an author, a columnist, a pioneering television cook and is linked with commercializing several food brands.",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'Who is James Beard.',
+                incorrect: 'Who is ...',
+                incorrect1: 'Who is ...',
+                incorrect2: 'Who is ...'
             }
         }
     ]
@@ -388,12 +393,12 @@ $(document).ready(function () {
             }
         },
         columnFive = {
-            question: "",
+            question: "This famously foul-mouthed British chef is familiar to millions through his appearances in numerous television shows like Hell's Kitchen, Kitchen Nightmares, and MasterChef.",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'Who is Gordon Ramsey',
+                incorrect: 'Who is ...',
+                incorrect1: 'Who is ...',
+                incorrect2: 'Who is...'
             }
         }
     ]
@@ -439,12 +444,12 @@ $(document).ready(function () {
             }
         },
         columnFive = {
-            question: "",
+            question: "When this TV chef hosted Everyday Italian, angry viewers wrote to Food Network that they hired a model who was pretending to cook.",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'Who is Giada De Laurentiis',
+                incorrect: 'Who is ...',
+                incorrect1: 'Who is ...',
+                incorrect2: 'Who is ...'
             }
         }
     ]
