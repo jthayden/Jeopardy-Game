@@ -2,15 +2,35 @@ $(document).ready(function () {
     let score = 0
     let gameBoard = document.querySelector('.game-board');
     const categoriesArray = ['TV/Movies', 'Golf', 'South Carolina', 'Tennis', 'Food']
+
+
+
+   
+
+
+
+
     function checkScore() {
         if (score > 2000) {
-            alert('You Have Won The Game!')
+            Swal.fire({
+                type: 'success',
+                html: 'You Win!'
+            })
+            // alert('You Have Won The Game!')
             $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-        } else if (score === 3500) {
-            alert('You have tied')
-            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+            // } else if (score === 2000) {
+            //     Swal.fire({
+            //         type: 'success',
+            //         html: 'You Win!'
+            //     })
+            //     // alert('You have tied')
+            //     $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
         } else if (score <= -1000) {
-            alert('You Have Lost The Game, Refresh To Try Again')
+            Swal.fire({
+                type: 'error',
+                html: 'You Lose! Try again.'
+            })
+            // alert('You Have Lost The Game, Refresh To Try Again')
             $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
         }
     }
