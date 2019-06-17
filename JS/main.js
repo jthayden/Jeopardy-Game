@@ -53,13 +53,17 @@ for (let i = 0; i < 5; i++) {
 
 $(document).ready(function () {
     var rowOne = $('.rowOne')
+    var rowTwo = $('.rowTwo')
+    var rowThree = $('.rowThree')
+    var rowFour = $('.rowFour')
+    var rowFive = $('.rowFive')
 let scoreElem = $('#score')
 // let score=0
     rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         console.log(clicked.target)
         const { value: choice } = Swal.fire({
-            background: 'black',
+            background: 'white',
             type: 'question',
             title: rowOneQuestions[gamePiece].question,
             input: 'radio',
@@ -79,7 +83,31 @@ let scoreElem = $('#score')
             }
 
         })
-        
+    })
+        rowTwo.on('click', function (clicked) {
+            var gamePiece = clicked.target.id
+            console.log(clicked.target)
+            const { value: choice } = Swal.fire({
+                background: 'white',
+                type: 'question',
+                title: rowOneQuestions[gamePiece].question,
+                input: 'radio',
+                inputOptions: rowTwoQuestions[gamePiece].options,
+                inputValidator: function (value) {
+                    if (!value) {
+                        return "Please select an answer"
+                    } else if (value === 'correct') {
+                        alert('Correct!')
+                        score += 200
+    
+                    } else {
+                        alert('Wrong!')
+                        score -= 200
+                    }
+                    scoreElem.html("  $"+score)
+                }
+    
+            })
     })
 
 
@@ -110,34 +138,112 @@ let rowOneQuestions = [
     }
 ]
 
-// const questions = {
-//     one: [
-//         {
-//             question: 'Does this work',
-//             options: [
-//                 { text: 'Yes it does', isCorrectAnswer: true }
-//             ]
-//         },
-//         {
-//             question: 'Hey there',
-//             options: [
-//                 { text: 'Hi', isCorrectAnswer: false }
-//             ]
-//         }
-//     ],
-//     two: [
-//         {
-//             question: 'Does this work',
-//             options: [
-//                 { text: 'Yes it does', isCorrectAnswer: true }
-//             ]
-//         },
-//         {
-//             question: 'Hey there',
-//             options: [
-//                 { text: 'Hi', isCorrectAnswer: false }
-//             ]
-//         }
-//     ]
+// $200 questions
+let rowTwoQuestions = [
+    columnOne = {
+        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+        options: {
+            correct: 'Danny Devito',
+            incorrect2: 'sam jackson',
+            incorrect: 'bruce willis'
+        }
+
+
+    },
+    columnTwo = {
+        prompt: "Question2 blahblah",
+        answer: "a"
+    },
+    columnThree = {
+
+    },
+    columnFour = {
+
+    },
+    columnFive = {
+
+    }
+]
+
+// $300 questions
+let rowThreeQuestions = [
+    columnOne = {
+        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+        options: {
+            correct: 'Danny Devito',
+            incorrect2: 'sam jackson',
+            incorrect: 'bruce willis'
+        }
+
+
+    },
+    columnTwo = {
+        prompt: "Question2 blahblah",
+        answer: "a"
+    },
+    columnThree = {
+
+    },
+    columnFour = {
+
+    },
+    columnFive = {
+
+    }
+]
+
+// $400 questions
+let rowFourQuestions = [
+    columnOne = {
+        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+        options: {
+            correct: 'Danny Devito',
+            incorrect2: 'sam jackson',
+            incorrect: 'bruce willis'
+        }
+
+
+    },
+    columnTwo = {
+        prompt: "Question2 blahblah",
+        answer: "a"
+    },
+    columnThree = {
+
+    },
+    columnFour = {
+
+    },
+    columnFive = {
+
+    }
+]
+
+// $500 questions
+let rowFiveQuestions = [
+    columnOne = {
+        question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
+        options: {
+            correct: 'Danny Devito',
+            incorrect2: 'sam jackson',
+            incorrect: 'bruce willis'
+        }
+
+
+    },
+    columnTwo = {
+        prompt: "Question2 blahblah",
+        answer: "a"
+    },
+    columnThree = {
+
+    },
+    columnFour = {
+
+    },
+    columnFive = {
+
+    }
+]
 
 })
