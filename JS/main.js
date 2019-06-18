@@ -3,39 +3,7 @@ $(document).ready(function () {
     let gameBoard = document.querySelector('.game-board');
     const categoriesArray = ['TV/Movies', 'Golf', 'South Carolina', 'Tennis', 'Food']
 
-
-
-   
-
-
-
-
-    function checkScore() {
-        if (score > 2000) {
-            Swal.fire({
-                type: 'success',
-                html: 'You Win!'
-            })
-            // alert('You Have Won The Game!')
-            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-            // } else if (score === 2000) {
-            //     Swal.fire({
-            //         type: 'success',
-            //         html: 'You Win!'
-            //     })
-            //     // alert('You have tied')
-            //     $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-        } else if (score <= -1000) {
-            Swal.fire({
-                type: 'error',
-                html: 'You Lose! Try again.'
-            })
-            // alert('You Have Lost The Game, Refresh To Try Again')
-            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-        }
-    }
-
-    // const categoriesArray = ['C1', 'C2', 'C3', 'C4', 'C5'] 
+  
     //create category header on gameboard
     for (let i = 0; i < 5; i++) {
         let categories = document.createElement('h2');
@@ -84,7 +52,22 @@ $(document).ready(function () {
         btn.appendChild(document.createTextNode('$500'));
     }
 
-
+  //Win/Lose function
+  function checkScore() {
+    if (score > 2000) {
+        Swal.fire({
+            type: 'success',
+            html: 'You Win!'
+        })
+        $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+    } else if (score <= -1000) {
+        Swal.fire({
+            type: 'error',
+            html: 'You Lose! Try again.'
+        })
+        $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+    }
+}
 
 
     var rowOne = $('.rowOne')
@@ -94,14 +77,11 @@ $(document).ready(function () {
     var rowFive = $('.rowFive')
     let scoreElem = $('#score')
 
-    // let score=0
-
     //Row 1 click function
     rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
-
-        console.log(clicked.target)
         const { value: choice } = Swal.fire({
+           confirmButtonColor: 'black',
             allowOutsideClick: false,
             background: 'white',
             type: 'question',
@@ -130,7 +110,6 @@ $(document).ready(function () {
     //Row 2 click function
     rowTwo.on('click', function (clicked) {
         var gamePiece = clicked.target.id
-        console.log(clicked.target)
         const { value: choice } = Swal.fire({
             allowOutsideClick: false,
             background: 'white',
@@ -144,7 +123,6 @@ $(document).ready(function () {
                 } else if (value === 'correct') {
                     alert('Correct!')
                     score += 200
-
                 } else {
                     alert('Wrong!')
                     score -= 200
@@ -152,7 +130,6 @@ $(document).ready(function () {
                 scoreElem.html("  $" + score)
             },
             onAfterClose: checkScore
-
         })
         $(this).attr('disabled', 'disabled')
     })
@@ -160,7 +137,6 @@ $(document).ready(function () {
     //Row 3 click function
     rowThree.on('click', function (clicked) {
         var gamePiece = clicked.target.id
-        console.log(clicked.target)
         const { value: choice } = Swal.fire({
             allowOutsideClick: false,
             background: 'white',
@@ -174,7 +150,6 @@ $(document).ready(function () {
                 } else if (value === 'correct') {
                     alert('Correct!')
                     score += 300
-
                 } else {
                     alert('Wrong!')
                     score -= 300
@@ -182,7 +157,6 @@ $(document).ready(function () {
                 scoreElem.html("  $" + score)
             },
             onAfterClose: checkScore
-
         })
         $(this).attr('disabled', 'disabled')
     })
@@ -190,7 +164,6 @@ $(document).ready(function () {
     //Row 4 click function
     rowFour.on('click', function (clicked) {
         var gamePiece = clicked.target.id
-        console.log(clicked.target)
         const { value: choice } = Swal.fire({
             allowOutsideClick: false,
             background: 'white',
@@ -204,7 +177,6 @@ $(document).ready(function () {
                 } else if (value === 'correct') {
                     alert('Correct!')
                     score += 400
-
                 } else {
                     alert('Wrong!')
                     score -= 400
@@ -212,7 +184,6 @@ $(document).ready(function () {
                 scoreElem.html("  $" + score)
             },
             onAfterClose: checkScore
-
         })
         $(this).attr('disabled', 'disabled')
     })
@@ -220,7 +191,6 @@ $(document).ready(function () {
     //Row 5 click function
     rowFive.on('click', function (clicked) {
         var gamePiece = clicked.target.id
-        console.log(clicked.target)
         const { value: choice } = Swal.fire({
             allowOutsideClick: false,
             background: 'white',
@@ -234,7 +204,6 @@ $(document).ready(function () {
                 } else if (value === 'correct') {
                     alert('Correct!')
                     score += 500
-
                 } else {
                     alert('Wrong!')
                     score -= 500
@@ -242,50 +211,13 @@ $(document).ready(function () {
                 scoreElem.html("  $" + score)
             },
             onAfterClose: checkScore
-            // function () {
-            //     if (score > 3500) {
-            //         alert('You Have Won The Game!')
-            //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-            //     } else if (score === 3500) {
-            //         alert('You have tied')
-            //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-            //     } else if (score <= -1000) {
-            //         alert('You Have Lost The Game, Refresh To Try Again')
-            //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-            //     }
-            // }
         })
         $(this).attr('disabled', 'disabled')
     })
 
-    // let checkScore = function() {
-    //     if (score > 3500) {
-    //         alert('You Have Won The Game!')
-    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-    //     } else if (score === 3500) {
-    //         alert('You have tied')
-    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-    //     } else if (score <= -1000) {
-    //         alert('You Have Lost The Game, Refresh To Try Again')
-    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-    //     }
-    // }
-
-    // Win/Lose
-    // $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').on('click', function () {
-    //     if (score > 3500) {
-    //         alert('You Have Won The Game!')
-    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-    //     } else if (score === 3500) {
-    //         alert('You have tied')
-    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-    //     } else if (score <= -1000) {
-    //         alert('You Have Lost The Game, Refresh To Try Again')
-    //         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-    //     }
-
-    // })
-
+    
+    
+/////QUESTIONS/////
 
     // $100 questions
     let rowOneQuestions = [
@@ -293,45 +225,45 @@ $(document).ready(function () {
             question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
             options: {
                 correct: 'Who is Danny Devito',
-                incorrect: 'Who is ...',
-                incorrect1: 'Who is ...',
-                incorrect2: 'Who is ...'
+                incorrect: 'Who is Al Pacino',
+                incorrect1: 'Who is Robert DeNiro',
+                incorrect2: 'Who is Jack Nicholson'
             }
         },
         columnTwo = {
-            question: "Who was the first golfer to win the Masters Tournament two years in a row?",
+            question: "How many holes are in a full round of golf?",
             options: {
-                correct: 'Who is Jack Nicklaus',
-                incorrect: 'Who is ...',
-                incorrect1: 'Who is ...',
-                incorrect2: 'Who is ...'
+                correct: 'What is eighteen',
+                incorrect: 'What is nine',
+                incorrect1: 'Who is twelve',
+                incorrect2: 'Who is twenty-four'
             }
         },
         columnThree = {
             question: "This resort island off the coast of South Carolina was named for a British sea captain.",
             options: {
                 correct: 'What is Hilton Head Island',
-                incorrect: 'What is ...',
-                incorrect1: 'What is ...',
-                incorrect2: 'What is ...'
+                incorrect: 'What is Kiawah Island',
+                incorrect1: 'What is Edisto Island',
+                incorrect2: 'What is Sullivans Island'
             }
         },
         columnFour = {
-            question: "",
+            question: "What is the term for a zero score in tennis?",
             options: {
-                correct: 'Who is',
-                incorrect: 'Who is ',
-                incorrect1: 'Who is ...',
-                incorrect2: 'Who is ...'
+                correct: 'What is love',
+                incorrect: 'What is let ',
+                incorrect1: 'What is skunk',
+                incorrect2: 'What is ace'
             }
         },
         columnFive = {
             question: "A Moscow Mule is a type of cocktail popularly served in this.",
             options: {
                 correct: 'What is a copper mug',
-                incorrect: 'What is ...',
-                incorrect1: 'What is ...',
-                incorrect2: 'What is ...'
+                incorrect: 'What is a pint',
+                incorrect1: 'What is a highball',
+                incorrect2: 'What is a lowball'
             }
         }
     ]
@@ -339,12 +271,12 @@ $(document).ready(function () {
     // $200 questions
     let rowTwoQuestions = [
         columnOne = {
-            question: "",
+            question: "Which character becomes a wanted fugitive during the final season of The Office?",
             options: {
-                correct: '',
-                incorrect: 'What is ...',
-                incorrect1: 'What is ...',
-                incorrect2: 'What is ...'
+                correct: 'Who is Creed',
+                incorrect: 'Who is Michael',
+                incorrect1: 'Who is Dwight',
+                incorrect2: 'Who is Andy'
             }
 
 
@@ -353,13 +285,13 @@ $(document).ready(function () {
             question: "Tiger Woods became a professional golfer in what year?",
             options: {
                 correct: 'What is 1996',
-                incorrect: 'What is ...',
-                incorrect1: 'What is ...',
-                incorrect2: 'What is ...'
+                incorrect: 'What is 1999',
+                incorrect1: 'What is 2001',
+                incorrect2: 'What is 2003'
             }
         },
         columnThree = {
-            question: "The German multinational company, BMW, produces over __% of their entire modal lineup in this South Carolina city.",
+            question: "The German multinational company, BMW, produces their entire SUV lineup in this South Carolina city.",
             options: {
                 correct: 'What is Spartanburg',
                 incorrect: 'What is Greenville',
@@ -368,21 +300,21 @@ $(document).ready(function () {
             }
         },
         columnFour = {
-            question: "",
+            question: 'For a tennis player, winning the "Grand Slam" involves winning what four tournaments in the same calendar year?',
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What are the Australian Open, French Open, US Open, and Wimbledon',
+                incorrect: 'What are the Italian Open, French Open, US Open, and Wimbledon',
+                incorrect1: 'What are the French Open, US Open, Davis Cup, and Wimbledon',
+                incorrect2: 'What are the German Open, French Open, US Open, and Japanese Open'
             }
         },
         columnFive = {
-            question: "When found on a beer bottle, what does the acronym IPA stand for?",
+            question: "A buffalo burger is made of which type of meat?",
             options: {
-                correct: 'What is India Pale Ale',
-                incorrect: 'What is ...',
-                incorrect1: 'What is ...',
-                incorrect2: 'What is ...'
+                correct: 'What is bison',
+                incorrect: 'What is buffalo',
+                incorrect1: 'What is beef',
+                incorrect2: 'What is venison'
             }
         }
     ]
@@ -390,51 +322,51 @@ $(document).ready(function () {
     // $300 questions
     let rowThreeQuestions = [
         columnOne = {
-            question: "",
+            question: "In 2004, who won 2.5 million dollars in the popular game show, Jeopardy?",
             options: {
-                correct: '',
-                incorrect: 'Who is ...',
-                incorrect1: 'Who is ...',
-                incorrect2: 'Who is ...'
+                correct: 'Who is Ken Jennings',
+                incorrect: 'Who is Stacy Nelson',
+                incorrect1: 'Who is Grace Young',
+                incorrect2: 'Who is Kyle Smith'
 
             }
 
 
         },
         columnTwo = {
-            question: 'What "King" of golf lent his name to a mixture of iced tea and lemonade?',
+            question: 'What golfer replaced Tiger Woods at the top of the Official World Golf Rankings in 2004?',
             options: {
-                correct: 'Who is Arnold Palmer',
-                incorrect: 'Who is ...',
-                incorrect1: 'Who is ...',
-                incorrect2: 'Who is ...'
+                correct: 'Who is Vijay Singh',
+                incorrect: 'Who is Tom Watson',
+                incorrect1: 'Who is Phil Mickelson',
+                incorrect2: 'Who is Todd Hamilton'
             }
         },
         columnThree = {
-            question: "",
+            question: "Home to the University of South Carolina, this city is also the state capital.",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is Columbia',
+                incorrect: 'What is Charleston',
+                incorrect1: 'What is Greenville',
+                incorrect2: 'What is Beaufort'
             }
         },
         columnFour = {
-            question: "",
+            question: "What company has provided every tennis ball for the Wimbledon Championship since 1902?",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is Slazenger',
+                incorrect: 'What is Wilson',
+                incorrect1: 'What is Penn',
+                incorrect2: 'What is Prince'
             }
         },
         columnFive = {
             question: "Highly regarded awards are given annually in the name of this man who is considered the dean of American chefs. Among others he was an author, a columnist, a pioneering television cook and is linked with commercializing several food brands.",
             options: {
                 correct: 'Who is James Beard.',
-                incorrect: 'Who is ...',
-                incorrect1: 'Who is ...',
-                incorrect2: 'Who is ...'
+                incorrect: 'Who is Alton Brown',
+                incorrect1: 'Who is James Peterson',
+                incorrect2: 'Who is Jeffrey Alford'
             }
         }
     ]
@@ -442,50 +374,50 @@ $(document).ready(function () {
     // $400 questions
     let rowFourQuestions = [
         columnOne = {
-            question: "",
+            question: "What family owned a banana stand and drove a stair car?",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'Who is the Bluth family',
+                incorrect: 'Who is the Griffin family',
+                incorrect1: 'Who is the Smith family',
+                incorrect2: 'Who is the Hanson family'
             }
 
 
         },
         columnTwo = {
-            question: "How many holes are in a full round of golf?",
+            question: "Who was the first golfer to win the Masters Tournament two years in a row?",
             options: {
-                correct: 'What is eighteen',
-                incorrect: 'What is nine',
-                incorrect1: 'What is twelve',
-                incorrect2: 'What is twenty-four'
+                correct: 'Who is Jack Nicklaus',
+                incorrect: 'Who is Arnold Palmer',
+                incorrect1: 'Who is Fuzzy Zoeller',
+                incorrect2: 'Who is Ben Hogan'
             }
         },
         columnThree = {
-            question: "",
+            question:  `Nicknamed "The Holy City", this city has been voted the top tourist destination for nearly a decade.` ,
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is Charleston',
+                incorrect: 'What is Columbia',
+                incorrect1: 'What is Florence',
+                incorrect2: 'What is Greenville'
             }
         },
         columnFour = {
-            question: "",
+            question: "What is the nickname of the No. 2 Court at Wimbledon?",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is Graveyard of Champions',
+                incorrect: `What is Winner's Court`,
+                incorrect1: 'What is Court of the Irish',
+                incorrect2: `What is No Man's Land`
             }
         },
         columnFive = {
             question: "This famously foul-mouthed British chef is familiar to millions through his appearances in numerous television shows like Hell's Kitchen, Kitchen Nightmares, and MasterChef.",
             options: {
                 correct: 'Who is Gordon Ramsey',
-                incorrect: 'Who is ...',
-                incorrect1: 'Who is ...',
-                incorrect2: 'Who is...'
+                incorrect: 'Who is Bobby Flay',
+                incorrect1: 'Who is Wolfgang Puck',
+                incorrect2: 'Who is Anthony Bourdain'
             }
         }
     ]
@@ -493,50 +425,50 @@ $(document).ready(function () {
     // $500 questions
     let rowFiveQuestions = [
         columnOne = {
-            question: "",
+            question: "Action movie legend Chuck Norris formerly starred in which television series?",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is Walker, Texas Ranger',
+                incorrect: 'What is Matlock',
+                incorrect1: 'What is Baywatch',
+                incorrect2: 'What is Nash Bridges'
             }
 
 
         },
         columnTwo = {
-            question: "",
+            question: "Who was the first golfer to reach one million dollars in career earnings on the PGA Tour?",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'Who is Arnold Palmer',
+                incorrect: 'Who is Bobby Jones',
+                incorrect1: 'Who is Jack Nicklaus',
+                incorrect2: 'Who is Tiger Woods'
             }
         },
         columnThree = {
-            question: "",
+            question: "South Carolina is the nation's leading producer of this fruit.",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is peach',
+                incorrect: 'What is strawberry',
+                incorrect1: 'What is blueberry',
+                incorrect2: 'What is mango'
             }
         },
         columnFour = {
-            question: "",
+            question: "What year was tennis originally intoduced as an Olympic sport?",
             options: {
-                correct: '',
-                incorrect: '',
-                incorrect1: '',
-                incorrect2: ''
+                correct: 'What is 1896',
+                incorrect: 'What is 1924',
+                incorrect1: 'What is 1968',
+                incorrect2: 'What is 1988'
             }
         },
         columnFive = {
             question: "When this TV chef hosted Everyday Italian, angry viewers wrote to Food Network that they hired a model who was pretending to cook.",
             options: {
                 correct: 'Who is Giada De Laurentiis',
-                incorrect: 'Who is ...',
-                incorrect1: 'Who is ...',
-                incorrect2: 'Who is ...'
+                incorrect: 'Who is Rachel Ray',
+                incorrect1: 'Who is Paula Deen',
+                incorrect2: 'Who is Ina Garten'
             }
         }
     ]
