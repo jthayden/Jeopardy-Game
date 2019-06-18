@@ -224,17 +224,17 @@ $(document).ready(function () {
         columnOne = {
             question: "Who plays the role of Frank Reynolds in the comedy series 'It's Always Sunny in Philadelphia'?",
             options: {
-                correct: 'Who is Danny Devito',
                 incorrect: 'Who is Al Pacino',
                 incorrect1: 'Who is Robert DeNiro',
+                correct: 'Who is Danny Devito',
                 incorrect2: 'Who is Jack Nicholson'
             }
         },
         columnTwo = {
             question: "How many holes are in a full round of golf?",
             options: {
-                correct: 'What is eighteen',
                 incorrect: 'What is nine',
+                correct: 'What is eighteen',
                 incorrect1: 'Who is twelve',
                 incorrect2: 'Who is twenty-four'
             }
@@ -242,10 +242,10 @@ $(document).ready(function () {
         columnThree = {
             question: "This resort island off the coast of South Carolina was named for a British sea captain.",
             options: {
-                correct: 'What is Hilton Head Island',
                 incorrect: 'What is Kiawah Island',
                 incorrect1: 'What is Edisto Island',
-                incorrect2: 'What is Sullivans Island'
+                incorrect2: 'What is Sullivans Island',
+                correct: 'What is Hilton Head Island'
             }
         },
         columnFour = {
@@ -260,8 +260,8 @@ $(document).ready(function () {
         columnFive = {
             question: "A Moscow Mule is a type of cocktail popularly served in this.",
             options: {
-                correct: 'What is a copper mug',
                 incorrect: 'What is a pint',
+                correct: 'What is a copper mug',
                 incorrect1: 'What is a highball',
                 incorrect2: 'What is a lowball'
             }
@@ -284,17 +284,17 @@ $(document).ready(function () {
         columnTwo = {
             question: "Tiger Woods became a professional golfer in what year?",
             options: {
-                correct: 'What is 1996',
                 incorrect: 'What is 1999',
                 incorrect1: 'What is 2001',
-                incorrect2: 'What is 2003'
+                incorrect2: 'What is 2003',
+                correct: 'What is 1996'
             }
         },
         columnThree = {
             question: "The German multinational company, BMW, produces their entire SUV lineup in this South Carolina city.",
             options: {
-                correct: 'What is Spartanburg',
                 incorrect: 'What is Greenville',
+                correct: 'What is Spartanburg',
                 incorrect1: 'What is Sumter',
                 incorrect2: 'What is Orangeburg'
             }
@@ -302,19 +302,19 @@ $(document).ready(function () {
         columnFour = {
             question: 'For a tennis player, winning the "Grand Slam" involves winning what four tournaments in the same calendar year?',
             options: {
-                correct: 'What are the Australian Open, French Open, US Open, and Wimbledon',
                 incorrect: 'What are the Italian Open, French Open, US Open, and Wimbledon',
                 incorrect1: 'What are the French Open, US Open, Davis Cup, and Wimbledon',
+                correct: 'What are the Australian Open, French Open, US Open, and Wimbledon',
                 incorrect2: 'What are the German Open, French Open, US Open, and Japanese Open'
             }
         },
         columnFive = {
             question: "A buffalo burger is made of which type of meat?",
             options: {
-                correct: 'What is bison',
                 incorrect: 'What is buffalo',
                 incorrect1: 'What is beef',
-                incorrect2: 'What is venison'
+                incorrect2: 'What is venison',
+                correct: 'What is bison'
             }
         }
     ]
@@ -324,20 +324,17 @@ $(document).ready(function () {
         columnOne = {
             question: "In 2004, who won 2.5 million dollars in the popular game show, Jeopardy?",
             options: {
-                correct: 'Who is Ken Jennings',
                 incorrect: 'Who is Stacy Nelson',
                 incorrect1: 'Who is Grace Young',
-                incorrect2: 'Who is Kyle Smith'
-
+                incorrect2: 'Who is Kyle Smith',
+                correct: 'Who is Ken Jennings'
             }
-
-
         },
         columnTwo = {
             question: 'What golfer replaced Tiger Woods at the top of the Official World Golf Rankings in 2004?',
             options: {
-                correct: 'Who is Vijay Singh',
                 incorrect: 'Who is Tom Watson',
+                correct: 'Who is Vijay Singh',
                 incorrect1: 'Who is Phil Mickelson',
                 incorrect2: 'Who is Todd Hamilton'
             }
@@ -345,9 +342,9 @@ $(document).ready(function () {
         columnThree = {
             question: "Home to the University of South Carolina, this city is also the state capital.",
             options: {
-                correct: 'What is Columbia',
                 incorrect: 'What is Charleston',
                 incorrect1: 'What is Greenville',
+                correct: 'What is Columbia',
                 incorrect2: 'What is Beaufort'
             }
         },
@@ -363,8 +360,8 @@ $(document).ready(function () {
         columnFive = {
             question: "Highly regarded awards are given annually in the name of this man who is considered the dean of American chefs. Among others he was an author, a columnist, a pioneering television cook and is linked with commercializing several food brands.",
             options: {
-                correct: 'Who is James Beard.',
                 incorrect: 'Who is Alton Brown',
+                correct: 'Who is James Beard.',
                 incorrect1: 'Who is James Peterson',
                 incorrect2: 'Who is Jeffrey Alford'
             }
@@ -376,8 +373,8 @@ $(document).ready(function () {
         columnOne = {
             question: "What family owned a banana stand and drove a stair car?",
             options: {
-                correct: 'Who is the Bluth family',
                 incorrect: 'Who is the Griffin family',
+                correct: 'Who is the Bluth family',
                 incorrect1: 'Who is the Smith family',
                 incorrect2: 'Who is the Hanson family'
             }
@@ -396,27 +393,27 @@ $(document).ready(function () {
         columnThree = {
             question:  `Nicknamed "The Holy City", this city has been voted the top tourist destination for nearly a decade.` ,
             options: {
-                correct: 'What is Charleston',
                 incorrect: 'What is Columbia',
                 incorrect1: 'What is Florence',
-                incorrect2: 'What is Greenville'
+                incorrect2: 'What is Greenville',
+                correct: 'What is Charleston'
             }
         },
         columnFour = {
             question: "What is the nickname of the No. 2 Court at Wimbledon?",
             options: {
-                correct: 'What is Graveyard of Champions',
                 incorrect: `What is Winner's Court`,
                 incorrect1: 'What is Court of the Irish',
+                correct: 'What is Graveyard of Champions',
                 incorrect2: `What is No Man's Land`
             }
         },
         columnFive = {
             question: "This famously foul-mouthed British chef is familiar to millions through his appearances in numerous television shows like Hell's Kitchen, Kitchen Nightmares, and MasterChef.",
             options: {
-                correct: 'Who is Gordon Ramsey',
                 incorrect: 'Who is Bobby Flay',
                 incorrect1: 'Who is Wolfgang Puck',
+                correct: 'Who is Gordon Ramsey',
                 incorrect2: 'Who is Anthony Bourdain'
             }
         }
@@ -438,26 +435,26 @@ $(document).ready(function () {
         columnTwo = {
             question: "Who was the first golfer to reach one million dollars in career earnings on the PGA Tour?",
             options: {
-                correct: 'Who is Arnold Palmer',
                 incorrect: 'Who is Bobby Jones',
                 incorrect1: 'Who is Jack Nicklaus',
-                incorrect2: 'Who is Tiger Woods'
+                incorrect2: 'Who is Tiger Woods',
+                correct: 'Who is Arnold Palmer'
             }
         },
         columnThree = {
             question: "South Carolina is the nation's leading producer of this fruit.",
             options: {
-                correct: 'What is peach',
                 incorrect: 'What is strawberry',
                 incorrect1: 'What is blueberry',
+                correct: 'What is peach',
                 incorrect2: 'What is mango'
             }
         },
         columnFour = {
             question: "What year was tennis originally intoduced as an Olympic sport?",
             options: {
-                correct: 'What is 1896',
                 incorrect: 'What is 1924',
+                correct: 'What is 1896',
                 incorrect1: 'What is 1968',
                 incorrect2: 'What is 1988'
             }
@@ -465,9 +462,9 @@ $(document).ready(function () {
         columnFive = {
             question: "When this TV chef hosted Everyday Italian, angry viewers wrote to Food Network that they hired a model who was pretending to cook.",
             options: {
-                correct: 'Who is Giada De Laurentiis',
                 incorrect: 'Who is Rachel Ray',
                 incorrect1: 'Who is Paula Deen',
+                correct: 'Who is Giada De Laurentiis',
                 incorrect2: 'Who is Ina Garten'
             }
         }
