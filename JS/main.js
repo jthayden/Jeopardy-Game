@@ -3,7 +3,7 @@ $(document).ready(function () {
     let gameBoard = document.querySelector('.game-board');
     const categoriesArray = ['TV/Movies', 'Golf', 'South Carolina', 'Tennis', 'Food']
 
-  
+
     //create category header on gameboard
     for (let i = 0; i < 5; i++) {
         let categories = document.createElement('h2');
@@ -52,22 +52,22 @@ $(document).ready(function () {
         btn.appendChild(document.createTextNode('$500'));
     }
 
-  //Win/Lose function
-  function checkScore() {
-    if (score >= 2500) {
-        Swal.fire({
-            type: 'success',
-            html: 'You Win!'
-        })
-        $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-    } else if (score <= -1500) {
-        Swal.fire({
-            type: 'error',
-            html: 'You Lose! Try again.'
-        })
-        $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+    //Win/Lose function
+    function checkScore() {
+        if (score >= 2500) {
+            Swal.fire({
+                type: 'success',
+                html: 'You Win!'
+            })
+            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+        } else if (score <= -1500) {
+            Swal.fire({
+                type: 'error',
+                html: 'You Lose! Try again.'
+            })
+            $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
+        }
     }
-}
 
 
     var rowOne = $('.rowOne')
@@ -81,7 +81,7 @@ $(document).ready(function () {
     rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         const { value: choice } = Swal.fire({
-           confirmButtonColor: 'black',
+            confirmButtonColor: 'black',
             allowOutsideClick: false,
             background: 'white',
             type: 'question',
@@ -215,9 +215,9 @@ $(document).ready(function () {
         $(this).attr('disabled', 'disabled')
     })
 
-    
-    
-/////QUESTIONS/////
+
+
+    /////QUESTIONS/////
 
     // $100 questions
     let rowOneQuestions = [
@@ -391,7 +391,7 @@ $(document).ready(function () {
             }
         },
         columnThree = {
-            question:  `Nicknamed "The Holy City", this city has been voted the top tourist destination for nearly a decade.` ,
+            question: `Nicknamed "The Holy City", this city has been voted the top tourist destination for nearly a decade.`,
             options: {
                 incorrect: 'What is Columbia',
                 incorrect1: 'What is Florence',
