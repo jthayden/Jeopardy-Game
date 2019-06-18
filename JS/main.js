@@ -54,13 +54,13 @@ $(document).ready(function () {
 
   //Win/Lose function
   function checkScore() {
-    if (score > 2000) {
+    if (score >= 2500) {
         Swal.fire({
             type: 'success',
             html: 'You Win!'
         })
         $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
-    } else if (score <= -1000) {
+    } else if (score <= -1500) {
         Swal.fire({
             type: 'error',
             html: 'You Lose! Try again.'
