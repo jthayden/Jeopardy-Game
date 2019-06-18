@@ -1,7 +1,8 @@
 body {
-    margin: auto 25px;
+    margin: 0px 25px 75px 25px;
     text-align: center;
-    background-color: gray;
+    background-color: #17252A;
+    font-family: 'Raleway', sans-serif;
 }
 
 header {
@@ -13,43 +14,52 @@ header {
     align-items: center;
     padding: 40px;
 }
-#header-right{
+
+#header-right {
     grid-area: 1 / col3-start / last-line / 4;
-    /* justify-content: flex-end; */
+    color: #FEFFFF;
 }
+
+#score {
+    color: #3AAFA9;
+}
+
 .logo {
     grid-column: 2 / 4;
     justify-self: stretch;
     max-height: 90px;
-    /* grid-area: 2 / col2-start / last-line / 4; */
-    /* justify-content: center; */
-    /* color: blue;
-    font-size: 90px; */
 }
 
 .category {
-    background-color: black;
-    color: white;
+    background-color: #17252A;
+    color: #DEF2F1;
+    font-style: italic;
+    text-decoration-line: underline;
+}
 
+:disabled {
+    background-color: #17252A;
+    text-decoration-line: line-through;
 }
 
 .game-board {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto auto auto auto auto;
-    background-color: #2196F3;
-    padding: 25px;
+    background-color: #3AAFA9;
+    padding: 7px;
 }
 
 button {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 15px solid rgba(0, 0, 0, 0.5);
+    background-color: #2B7A78;
+    border: 10px solid rgba(0, 0, 0, 0.5);
+    color: #DEF2F1;
     padding: 20px;
     font-size: 25px;
     text-align: center;
 }
 
-/* possible tile animation */
+/* tile animation */
 
 button:hover {
     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;

@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     //create category header on gameboard
     for (let i = 0; i < 5; i++) {
-        let categories = document.createElement('h2');
+        let categories = document.createElement('h3');
         categories.classList.add('category');
         gameBoard.appendChild(categories);
         categories.appendChild(document.createTextNode(categoriesArray[i]));
@@ -57,13 +57,17 @@ $(document).ready(function () {
         if (score >= 2500) {
             Swal.fire({
                 type: 'success',
-                html: 'You Win!'
+                html: 'You Win!',
+                confirmButtonColor: '#3aafa9',
+                background: '#feffff'
             })
             $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
         } else if (score <= -1500) {
             Swal.fire({
                 type: 'error',
-                html: 'You Lose! Try again.'
+                html: 'You Lose! Try again.',
+                confirmButtonColor: '#3aafa9',
+                background: '#feffff'
             })
             $('.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive').attr('disabled', 'disabled');
         }
@@ -81,9 +85,9 @@ $(document).ready(function () {
     rowOne.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         const { value: choice } = Swal.fire({
-            confirmButtonColor: 'black',
+            confirmButtonColor: '#3aafa9',
             allowOutsideClick: false,
-            background: 'white',
+            background: '#feffff',
             type: 'question',
             title: rowOneQuestions[gamePiece].question,
             input: 'radio',
@@ -111,8 +115,9 @@ $(document).ready(function () {
     rowTwo.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         const { value: choice } = Swal.fire({
+            confirmButtonColor: '#3aafa9',
             allowOutsideClick: false,
-            background: 'white',
+            background: '#feffff',
             type: 'question',
             title: rowTwoQuestions[gamePiece].question,
             input: 'radio',
@@ -138,8 +143,9 @@ $(document).ready(function () {
     rowThree.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         const { value: choice } = Swal.fire({
+            confirmButtonColor: '#3aafa9',
             allowOutsideClick: false,
-            background: 'white',
+            background: '#feffff',
             type: 'question',
             title: rowThreeQuestions[gamePiece].question,
             input: 'radio',
@@ -165,8 +171,9 @@ $(document).ready(function () {
     rowFour.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         const { value: choice } = Swal.fire({
+            confirmButtonColor: '#3aafa9',
             allowOutsideClick: false,
-            background: 'white',
+            background: '#feffff',
             type: 'question',
             title: rowFourQuestions[gamePiece].question,
             input: 'radio',
@@ -192,8 +199,9 @@ $(document).ready(function () {
     rowFive.on('click', function (clicked) {
         var gamePiece = clicked.target.id
         const { value: choice } = Swal.fire({
+            confirmButtonColor: '#3aafa9',
             allowOutsideClick: false,
-            background: 'white',
+            background: '#feffff',
             type: 'question',
             title: rowFiveQuestions[gamePiece].question,
             input: 'radio',
@@ -215,6 +223,10 @@ $(document).ready(function () {
         $(this).attr('disabled', 'disabled')
     })
 
+    $('.logo').on('dblclick', function(){
+        let sound = document.getElementById('themeSong')
+        sound.play()
+    })
 
 
     /////QUESTIONS/////
